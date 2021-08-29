@@ -49,7 +49,7 @@ c.connect(url, function(err, db) {
                     }];
  console.log(co);
 
- s.collection("Building").insertMany(co, function(err, res) {
+ s.collection("buildings").insertMany(co, function(err, res) {
  if (err) throw err;
  console.log("(ii)" + res.insertedCount + "Building data inserted\n");
  });

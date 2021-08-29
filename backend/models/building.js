@@ -15,6 +15,6 @@ const mongoose = require('mongoose');
      timestamps: true,
    });
    
-   const Buliding= mongoose.model('Building', buildingSchema);
+   const Building= mongoose.model('Building', buildingSchema);
    
    module.exports = Building;

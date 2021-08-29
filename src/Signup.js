@@ -1,7 +1,6 @@
 import "./login.css";
 import React, { Component } from 'react';
 import axios from 'axios';
-import Landing from "./landing.js";
 class Signup extends Component{
     constructor(p)
     {
@@ -11,7 +10,6 @@ class Signup extends Component{
         this.c=this.c.bind(this);
         this.state={
             err:"",
-            r:true,
             name:"",
             regn:"",
             pas:"",
@@ -48,11 +46,10 @@ class Signup extends Component{
         axios.post('http://localhost:5000/students/add', obj)
       .then(res => console.log(res.data))
       .catch(err=>this.setState({err:"Data already registered"}));
+      this.props.fun.setState({p:false,st:obj});
     }
 render(){
   return (
-      <>
-      {this.state.r?
       <div  className="form">
     <div className="login-page">
     <form>
@@ -65,8 +62,7 @@ render(){
             <p className="message" >Already registered? <button type="button"  onClick={this.change}>Sign In</button></ p>
         </form>
     </div>
-    </div>:<Landing st={this}></Landing>}
-    </>
+    </div>
   );
 }
 }

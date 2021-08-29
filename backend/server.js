@@ -20,10 +20,12 @@ connection.once('open', () => {
 const studentRouter = require('./routes/students');
 const classesRouter = require('./routes/classes');
 const classRouter = require('./routes/class');
+const classRou = require('./routes/class-on-map');
 
 app.use('/students', studentRouter);
 app.use('/classes', classesRouter);
 app.use('/class', classRouter);
+app.use('/class-on-map', classRou);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
